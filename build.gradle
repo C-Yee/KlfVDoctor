@@ -4,7 +4,6 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.1'
@@ -18,7 +17,19 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        /*maven {
+            credentials {
+                username 'hh-public'
+                password 'OFGB5wX0'
+            }
+            url 'http://develop.hh-medic.com/repository/maven-public'
+        }*/
+        maven {
+            url 'http://192.168.127.136:8081/repository/maven-public'
+        }
+        /*maven {
+            url 'http://localhost:8081/repository/maven-vDoctor'
+        }*/
     }
 }
 

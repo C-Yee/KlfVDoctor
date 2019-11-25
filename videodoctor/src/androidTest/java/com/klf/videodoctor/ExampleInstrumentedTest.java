@@ -1,6 +1,7 @@
-package com.cy.klfvdoctor;
+package com.klf.videodoctor;
 
 import android.content.Context;
+
 import androidx.test.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
@@ -21,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.cy.klfvdoctor", appContext.getPackageName());
+        assertEquals("com.cy.videodoctor.test", appContext.getPackageName());
     }
 }

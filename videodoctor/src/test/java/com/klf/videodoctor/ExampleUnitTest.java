@@ -1,4 +1,4 @@
-package com.cy.klfvdoctor;
+package com.klf.videodoctor;
 
 import org.junit.Test;
 
