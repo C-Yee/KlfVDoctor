@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 29
@@ -24,4 +25,22 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     api 'com.klf.android.sdk:vdoctor:2.4.4'
+}
+
+ext {
+    PUBLISH_GROUP_ID = 'com.klf.android.sdk'
+    PUBLISH_ARTIFACT_ID = 'klfDoctor'
+    PUBLISH_VERSION = '1.0.0'
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        def deployPath = file(getProperty('aar.deployPath'))
+        repository(url: "file://${deployPath.absolutePath}")
+        pom.project {
+            groupId project.PUBLISH_GROUP_ID
+            artifactId project.PUBLISH_ARTIFACT_ID
+            version project.PUBLISH_VERSION
+        }
+    }
 }
